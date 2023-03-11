@@ -1,40 +1,18 @@
 <?php
 
-
-
     require_once("Conexao.php");
 
+    $json = file_get_contents("data.json");
+    $data = json_decode($json);
 
-    class Consultar{
+    //$objetoJson = '{"nome":"Joao","usuario":"doidao","senha":"123"}';
+    //$obj = json_decode($objetoJson);
+    $usuario = $data->usuario; // Acessando os valores do objeto nome
 
-        
 
-        public function ConsultarNascimento(Conexao $conexao, string $nomeDaTabela, string $cpf){
 
-            try{
-                $conn = $conexao->Conectar();
-                $sql = "select * from $nomeDaTabela where cpf = '$cpf'";
-                $result = mysqli_query($conn, $sql);
 
-                while ($dados = mysqli_fetch_Array($result)){
-
-                    $novaData = $dados['dataDeNascimento'];
-                    $ano = substr($novaData, 0, 4);
-                    $mes = substr($novaData, 5, 2);
-                    $dia = substr($novaData, 8, 2);
-                    $dataCorrigida = $dia."/".$mes."/".$ano;
-
-                    if($dados['cpf'] == $cpf){
-
-                        echo $dataCorrigida;
-
-                    }//Fim if
-
-                }//Fim while
-            }catch(Except $erro){
-                echo $erro;
-            }//Fim try catch
-        }//Fim function  
+    class Consultar{ 
         
         
         public function ConsultarFlashcard(Conexao $conexao, string $usuario){
@@ -50,7 +28,8 @@
                     $pergunta = $dados['pergunta'];
                     $resposta = $dados['resposta'];
 
-                    return "id Flashcard: ".$idFlashcard;
+                    $jsonFlash = array "idFlashcard"=>"$idFlashcard", "pergunta"=>"$pergunta", "resposta"=>"$resposta";
+                    return json_encode($jsonFlash);
                     
                 }//Fim while
                 return "Não encontrado!";
@@ -74,7 +53,7 @@
                     return;
                 }else{
                     
-                    header("location: PerfilPrestador.php");
+                    header("location: PerfilAluno.php");
                     exit();
                     
                 }
@@ -87,9 +66,6 @@
 
         }//Fim function logar
 
-
-
-        }//Fim function logarCliente
 
 
 
