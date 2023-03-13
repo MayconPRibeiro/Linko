@@ -1,5 +1,7 @@
 <?php
 
+    namespace Deletar;
+
     require_once("Conexao.php");    
 
 

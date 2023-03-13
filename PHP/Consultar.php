@@ -1,5 +1,7 @@
 <?php
 
+    namespace Consultar;
+
     require_once("Conexao.php");
 
     $json = file_get_contents("data.json");

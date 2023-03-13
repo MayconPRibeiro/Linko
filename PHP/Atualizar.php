@@ -1,9 +1,11 @@
 <?php
+    
+    namespace Atualizar;
 
+    require_once('Conexao.php');  
+    
     $json = file_get_contents("data.json");
     $data = json_decode($json);
-
-    require_once('Conexao.php');    
 
 
     class Atualizar{

@@ -1,4 +1,7 @@
 <?php
+
+    namespace Inserir;
+
     require_once("Conexao.php");
 
     $json = file_get_contents("data.json");
@@ -17,7 +20,7 @@
     $nome = $obj->nome; // Acessando os valores do objeto nome
     $senha = $obj->senha;
     $usuario = $obj->usuario;
-    
+
     Class Inserir{
 
         public function inserirAluno(
