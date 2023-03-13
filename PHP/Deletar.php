@@ -1,18 +1,14 @@
 <?php
 
-    namespace siteDomestica\PHP\domestica;  
-
-    require_once("Conexao.php");
-
-    use siteDomestica\PHP\domestica\Conexao;
+    require_once("Conexao.php");    
 
 
     class Deletar{
-        public function excluir(Conexao $conexao, string $nomeTabela, string $cpf){
+        public function excluirAluno(Conexao $conexao, string $usuario){
             try{
 
                 $conn = $conexao->conectar();
-                $sql = "delete from $nomeTabela where cpf = '$cpf'";
+                $sql = "delete from alunos where usuario = '$usuario' and senha = '$senha'";
                 $result = mysqli_query($conn,$sql);
 
                 mysqli_close($conn);
@@ -24,10 +20,35 @@
                 }//Fim if
                 echo "Ops...Houve uma falha, tente novamente! :(";
             }catch(Except $erro){
-                echo $erro;//Fim try catch
-            }
+                echo $erro;
+            }//Fim try catch
 
         }//Fim da função deletar
+
+
+        public function excluirFlashcard(Conexao $conexao, int $idFlashcard){
+            try{
+
+                $conn = $conexao->conectar();
+                $sql = "delete from flashcard where idFlashcard = '$idFlashcard'";
+                $result = mysqli_query($conn,$sql);
+
+                mysqli_close($conn);
+
+                if($result){
+                    echo "<br><br>Flashcard Deletado!";
+                    return;
+
+                }//Fim if
+                echo "OPS...Houve um erro, tente novamente! :(";
+            }catch(Except $erro){
+
+                echo $erro;
+
+            }//Fim try catch
+
+
+        }//Fim do excluirFlashcard
 
 
 
