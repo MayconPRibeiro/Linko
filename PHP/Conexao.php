@@ -1,6 +1,6 @@
 <?php
 
-namespace siteDomestica\PHP\domestica;
+namespace Conexao;
 
 
 class Conexao{
