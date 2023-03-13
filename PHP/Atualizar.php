@@ -3,9 +3,7 @@
     $json = file_get_contents("data.json");
     $data = json_decode($json);
 
-    require_once('Conexao.php');
-
-    
+    require_once('Conexao.php');    
 
 
     class Atualizar{
