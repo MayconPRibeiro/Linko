@@ -4,27 +4,20 @@
     $json = file_get_contents("data.json");
     $data = json_decode($json);
 
-    foreach ($data as $key => $value){
-        $value->nome;
-        $value->usuario;
-        $value->senha;
-    }//Fim foreach
+    //foreach ($data as $key => $value){        $value->nome;        $value->usuario;        $value->senha;    }//Fim foreach
 
 
     //OU
-    $myObj = new stdClass();
-    $myObj->name = "John";
-    $myObj->age = 30;
-    $myObj->city = "New York";
-
-    $myJSON = json_encode($myObj);
+    //$myObj = new stdClass();    $myObj->name = "John";    $myObj->age = 30;    $myObj->city = "New York";    $myJSON = json_encode($myObj);
 
 
     //OU
     $objetoJson = '{"nome":"Joao","usuario":"doidao","senha":"123"}';
     $obj = json_decode($objetoJson);
-    $obj->nome; // Acessando os valores do objeto nome
-
+    $nome = $obj->nome; // Acessando os valores do objeto nome
+    $senha = $obj->senha;
+    $usuario = $obj->usuario;
+    
     Class Inserir{
 
         public function inserirAluno(

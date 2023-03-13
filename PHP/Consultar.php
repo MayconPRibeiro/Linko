@@ -9,9 +9,6 @@
     //$obj = json_decode($objetoJson);
     $usuario = $data->usuario; // Acessando os valores do objeto nome
 
-
-
-
     class Consultar{ 
         
         
