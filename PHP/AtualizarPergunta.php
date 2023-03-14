@@ -27,7 +27,8 @@
                     echo json_encode("<br><br>Atualizado com Sucesso");
                     return;
                 }//Fim if
-                echo json_encode("<br><br>Ops, houve uma falha, tente novamente! :(");
+                    echo json_encode("<br><br>Ops, houve uma falha, tente novamente! :(");
+                    return;
 
 
     

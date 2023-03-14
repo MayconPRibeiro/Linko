@@ -26,7 +26,7 @@
                 echo json_encode("Ops...Não encontrei, tente novamente");
                 return;
             }else{
-                
+                                
                 header("location: PerfilAluno.js");
                 exit();
                 
