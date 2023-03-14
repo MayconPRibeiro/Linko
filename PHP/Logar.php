@@ -27,7 +27,7 @@
                 return;
             }else{
                 
-                header("location: PerfilAluno.php");
+                header("location: PerfilAluno.js");
                 exit();
                 
             }//Fim if else
