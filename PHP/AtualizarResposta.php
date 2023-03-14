@@ -1,5 +1,5 @@
 <?php
-
+    
     header('Content-Type: application/json');
     header('Access-Control-Allow-Origin: *');
     header('Access-Control-Allow-Headers: *');
@@ -8,30 +8,34 @@
     require_once("Conectar.php");
 
     use DAO\conectar;
-
+    
     $json = file_get_contents("php://input");
     $obj = json_decode($json);
 
-    $usuario = $obj->usuario;
+    $novoDado = $obj->novoDado;
+    $idFlahscard = $obj->idFlashcard;
+    
 
 
             try{
 
                 $conn = $conexao->conectar();
-                $sql = "delete from alunos where usuario = '$usuario'";
-                $result = mysqli_query($conn,$sql);
+                $sql = "update flashcard set resposta = '$novoDado' where idFlashcard = '$idFlashcard'";
+                $result = mysqli_query($conn, $sql);
 
                 mysqli_close($conn);
 
                 if($result){
-                    echo json_encode("<br><br>Deletado com sucesso! :)");
+                    echo json_encode("<br><br>Atualizado com Sucesso");
                     return;
-
                 }//Fim if
-                echo json_encode("Ops...Houve uma falha, tente novamente! :(");
+                echo json_encode("<br><br>Ops, houve uma falha, tente novamente! :(");
+
             }catch(Except $erro){
                 echo $erro;
             }//Fim try catch
+    
+
 
 
 ?>

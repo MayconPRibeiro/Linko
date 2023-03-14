@@ -12,26 +12,29 @@
     $json = file_get_contents("php://input");
     $obj = json_decode($json);
 
-    $usuario = $obj->usuario;
+    $idFlashcard = $obj->idFlahscard;
 
 
             try{
 
                 $conn = $conexao->conectar();
-                $sql = "delete from alunos where usuario = '$usuario'";
+                $sql = "delete from flashcard where idFlashcard = '$idFlashcard'";
                 $result = mysqli_query($conn,$sql);
 
                 mysqli_close($conn);
 
                 if($result){
-                    echo json_encode("<br><br>Deletado com sucesso! :)");
+                    echo json_encode("<br><br>Flashcard Deletado!");
                     return;
 
                 }//Fim if
-                echo json_encode("Ops...Houve uma falha, tente novamente! :(");
+                echo json_encode("OPS...Houve um erro, tente novamente! :(");
             }catch(Except $erro){
+
                 echo $erro;
+
             }//Fim try catch
+
 
 
 ?>

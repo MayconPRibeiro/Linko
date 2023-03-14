@@ -2,6 +2,8 @@
 
 namespace Conexao;
 
+use DAO\conectar;
+
 
 class Conexao{
     
