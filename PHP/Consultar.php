@@ -18,9 +18,6 @@
     $usuario = $obj->usuario; 
 
 
-            try{
-
-
                 $conn = $conexao->Conectar();
                 $sql = "select * from flashcard where usuario = '$usuario'";
                 $result = mysqli_query($conn, $sql);
@@ -35,13 +32,7 @@
                     return json_encode($jsonFlash);
                     
                 }//Fim while
-                return "Não encontrado!";
-            }catch(Except $erro){
-                echo $erro;
-            }//Fim try catch
-
-
-
+                return json_encode("Não encontrado!");
 
 
 

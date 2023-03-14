@@ -15,7 +15,7 @@
     $usuario = $obj->usuario;
 
 
-            try{
+
 
                 $conn = $conexao->conectar();
                 $sql = "delete from alunos where usuario = '$usuario'";
@@ -28,10 +28,9 @@
                     return;
 
                 }//Fim if
-                echo json_encode("Ops...Houve uma falha, tente novamente! :(");
-            }catch(Except $erro){
-                echo $erro;
-            }//Fim try catch
+                    echo json_encode("Ops...Houve uma falha, tente novamente! :(");
+                    return;
+
 
 
 ?>

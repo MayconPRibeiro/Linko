@@ -17,7 +17,7 @@
     $resposta = $obj['resposta'];
 
 
-    try{
+
 
         $conn = $conexao->conectar();
         $sql = "insert into flashcard (idFlashcard, pergunta, resposta) values ('', '$pergunta', '$resposta')";
@@ -33,8 +33,5 @@
 
         mysqli_close($conn);
 
-    }catch(Except $erro){
-        echo $erro;
-    }//Fim try catch
 
 ?>

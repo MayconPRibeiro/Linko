@@ -15,7 +15,7 @@
     $idFlashcard = $obj->idFlahscard;
 
 
-            try{
+
 
                 $conn = $conexao->conectar();
                 $sql = "delete from flashcard where idFlashcard = '$idFlashcard'";
@@ -28,12 +28,9 @@
                     return;
 
                 }//Fim if
-                echo json_encode("OPS...Houve um erro, tente novamente! :(");
-            }catch(Except $erro){
+                    echo json_encode("OPS...Houve um erro, tente novamente! :(");
+                    return;
 
-                echo $erro;
-
-            }//Fim try catch
 
 
 

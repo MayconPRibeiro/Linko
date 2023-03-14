@@ -16,8 +16,6 @@
     $usuario = $obj->usuario;
     $senha = $obj->senha;
 
-        try{
-
 
             $conn = $conexao->Conectar();
             $sql = "select * from alunos where usuario = '$usuario' and senha = '$senha'";
@@ -32,13 +30,9 @@
                 header("location: PerfilAluno.php");
                 exit();
                 
-            }
+            }//Fim if else
 
-        }catch(Except $erro){
 
-            echo $erro;
-
-        }//Fim try catch
 
 
 ?>

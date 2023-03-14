@@ -17,8 +17,6 @@
     
 
 
-            try{
-
                 $conn = $conexao->conectar();
                 $sql = "update flashcard set pergunta = '$novoDado' where idFlashcard = '$idFlahscard'";
                 $result = mysqli_query($conn, $sql);
@@ -31,9 +29,7 @@
                 }//Fim if
                 echo json_encode("<br><br>Ops, houve uma falha, tente novamente! :(");
 
-            }catch(Except $erro){
-                echo $erro;
-            }//Fim try catch
+
     
 
 

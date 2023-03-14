@@ -17,7 +17,7 @@
     $usuario = $obj['usuario'];
 
 
-        try{
+
 
             $conn = $conexao->conectar();
             $sql = "insert into alunos (usuario, nome, senha) values ('$usuario','$nome','$senha')";
@@ -28,15 +28,11 @@
                 return;
             }else{
                  echo json_encode ("<br><br>Ops, Aconteceu um erro, tente novamente! :(");
+                 return;
             }//Fim if else
 
             mysqli_close($conn);
-
-        }catch(Except $erro){
-
-                    echo $erro;
-
-        }//Fim try catch       
+   
 
 
  
