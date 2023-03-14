@@ -27,7 +27,7 @@
                 echo json_encode("<br><br>Cadastrado(a) com sucesso!");
                 return;
             }else{
-                 echo json_encode ("<br><br>Ops, Aconteceu um erro, tente novamente! :(");
+                 echo json_encode("<br><br>Ops, Aconteceu um erro, tente novamente! :(");
                  return;
             }//Fim if else
 
