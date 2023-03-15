@@ -27,7 +27,7 @@
                 return;
             }else{
                                 
-                header("location: PerfilAluno.js");
+                header("location: Decks.js");
                 exit();
                 
             }//Fim if else
