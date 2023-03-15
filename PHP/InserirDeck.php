@@ -13,18 +13,15 @@
     $obj = json_decode($json);
 
 
-    $pergunta = $obj['pergunta'];
-    $resposta = $obj['resposta'];
-
-
+    $nomeDeck = $obj['nomeDeck'];
 
 
     $conn = $conexao->conectar();
-    $sql = "insert into decks (idDeck, nomeDeck) values ('', '$nomeDeck')";
+    $sql = "insert into Deck (idDeck, nomeDeck) values ('', '$nomeDeck')";
     $result = mysqli_query($conn,$sql);
 
     if($result){
-        echo json_encode("<br><br>Flashcard Adicionado!");
+        echo json_encode("<br><br>Deck Adicionado!");
         return;
     }else{
         echo json_encode("<br><br>Ops, Aconteceu um erro, tente novamente! :(");

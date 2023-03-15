@@ -15,20 +15,20 @@
     //$objetoJson = '{"nome":"Joao","usuario":"doidao","senha":"123"}';
     //$obj = json_decode($objetoJson);
 
-    $usuario = $obj->usuario; 
+    $idDeck = $obj->idDeck; 
 
 
                 $conn = $conexao->Conectar();
-                $sql = "select * from flashcard where usuario = '$usuario'";
+                $sql = "select * from Deck where idDeck = '$idDeck'";
                 $result = mysqli_query($conn, $sql);
 
                 while ($dados = mysqli_fetch_Array($result)){
 
-                    $idFlashcard = $dados['idFlashcard'];
-                    $pergunta = $dados['pergunta'];
-                    $resposta = $dados['resposta'];
+                    $idDeck = $dados['idDeck'];
+                    $nomeDeck = $dados['nomeDeck'];
 
-                    $jsonFlash = array "idFlashcard"=>"$idFlashcard", "pergunta"=>"$pergunta", "resposta"=>"$resposta";
+
+                    $jsonFlash = array "idDeck"=>"$idDeck", "nomeDeck"=>"$nomeDeck";
                     return json_encode($jsonFlash);
                     
                 }//Fim while
