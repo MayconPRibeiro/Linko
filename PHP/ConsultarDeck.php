@@ -19,7 +19,7 @@
 
 
                 $conn = $conexao->Conectar();
-                $sql = "select idDeck, nomeDeck from Deck where idDeck = '$idDeck'";
+                $sql = "select * from flashcard where idDeck = '$idDeck'";
                 $result = mysqli_query($conn, $sql);
 
                 while ($dados = mysqli_fetch_Array($result)){
