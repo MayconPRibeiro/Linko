@@ -14,10 +14,11 @@
 
 
     $nomeDeck = $obj['nomeDeck'];
+    $idAluno = $obj['idAluno'];
 
 
     $conn = $conexao->conectar();
-    $sql = "insert into Deck (idDeck, nomeDeck) values ('', '$nomeDeck')";
+    $sql = "insert into Deck (idDeck, nomeDeck, idAluno) values ('', '$nomeDeck', $idAluno)";
     $result = mysqli_query($conn,$sql);
 
     if($result){

@@ -20,7 +20,7 @@
 
 
             $conn = $conexao->conectar();
-            $sql = "insert into alunos (usuario, nome, senha) values ('$usuario','$nome','$senha')";
+            $sql = "insert into alunos (idAluno, usuario, nome, senha) values ('' ,'$usuario','$nome','$senha')";
             $result = mysqli_query($conn,$sql);
 
             if($result){

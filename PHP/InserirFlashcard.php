@@ -15,12 +15,13 @@
     
     $pergunta = $obj['pergunta'];
     $resposta = $obj['resposta'];
+    $idDeck = $obj['idDeck'];
 
 
 
 
         $conn = $conexao->conectar();
-        $sql = "insert into flashcard (idFlashcard, pergunta, resposta) values ('', '$pergunta', '$resposta')";
+        $sql = "insert into flashcard (idFlashcard, pergunta, resposta, idDeck) values ('', '$pergunta', '$resposta', '$idDeck')";
         $result = mysqli_query($conn,$sql);
 
         if($result){
