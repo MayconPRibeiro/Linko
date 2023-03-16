@@ -32,10 +32,10 @@
 
 
                     $jsonFlash = array "idDeck"=>"$idDeck", "nomeDeck"=>"$nomeDeck";
-                    return json_encode($jsonFlash);
+                    return echo json_encode($jsonFlash);
                     
                 }//Fim while
-                    return json_encode("Não encontrado!");
+                    return echo json_encode("Não encontrado!");
 
 
 ?>
