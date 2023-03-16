@@ -15,8 +15,6 @@
     $idDeck = $obj->idDeck;
 
 
-
-
                 $conn = $conexao->conectar();
                 $sql = "delete from deck where idAluno = '$idDeck'";
                 $result = mysqli_query($conn,$sql);
@@ -32,8 +30,6 @@
                 }//Fim if
                     echo json_encode("OPS...Houve um erro, tente novamente! :(");
                     return;
-
-
 
 
 ?>
