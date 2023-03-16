@@ -19,13 +19,14 @@
 
 
                 $conn = $conexao->Conectar();
-                $sql = "select * from flashcard where idDeck = '$idDeck'";
+                $sql = "select * from deck where idAluno = '$idAluno'";
                 $result = mysqli_query($conn, $sql);
 
                 while ($dados = mysqli_fetch_Array($result)){
 
                     $idDeck = $dados['idDeck'];
                     $nomeDeck = $dados['nomeDeck'];
+                    
 
 
                     $jsonFlash = array "idDeck"=>"$idDeck", "nomeDeck"=>"$nomeDeck";
