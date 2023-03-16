@@ -10,7 +10,7 @@
     use DAO\conectar;
 
     $json = file_get_contents("php://input");
-    $obj = json_decode($json);
+    $obj = json_decode($json, true);
 
     $nome = $obj['nome'];
     $senha = $obj['senha'];

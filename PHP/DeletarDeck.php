@@ -10,7 +10,7 @@
     use DAO\conectar;
 
     $json = file_get_contents("php://input");
-    $obj = json_decode($json);
+    $obj = json_decode($json, true);
 
     $idDeck = $obj->idDeck;
 
@@ -24,11 +24,11 @@
                 mysqli_close($conn);
 
                 if($result){
-                    echo json_encode("<br><br>Deck Deletado!");
+                    echo json_encode("<br>Deck Deletado!");
                     return;
 
                 }//Fim if
-                    echo json_encode("OPS...Houve um erro, tente novamente! :(");
+                    echo json_encode("<br>OPS...Houve um erro, tente novamente! :(");
                     return;
 
 
