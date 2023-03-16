@@ -27,8 +27,7 @@
 
 
                     $idDeck = $dados['idDeck'];
-                    $nomeDeck = $dados['nomeDeck'];
-                    
+                    $nomeDeck = $dados['nomeDeck'];                    
 
 
                     $jsonFlash = array "idDeck"=>"$idDeck", "nomeDeck"=>"$nomeDeck";
