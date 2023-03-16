@@ -17,17 +17,15 @@
     $usuario = $obj['usuario'];
 
 
-
-
             $conn = $conexao->conectar();
             $sql = "insert into alunos (idAluno, usuario, nome, senha) values ('' ,'$usuario','$nome','$senha')";
             $result = mysqli_query($conn,$sql);
 
             if($result){
-                echo json_encode("<br><br>Cadastrado(a) com sucesso!");
+                echo json_encode("<br>Cadastrado(a) com sucesso!");
                 return;
             }else{
-                 echo json_encode("<br><br>Ops, Aconteceu um erro, tente novamente! :(");
+                 echo json_encode("<br>Ops...Deu errado, tente novamente! :(");
                  return;
             }//Fim if else
 

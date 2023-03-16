@@ -18,17 +18,15 @@
     $idDeck = $obj['idDeck'];
 
 
-
-
         $conn = $conexao->conectar();
         $sql = "insert into flashcard (idFlashcard, pergunta, resposta, idDeck) values ('', '$pergunta', '$resposta', '$idDeck')";
         $result = mysqli_query($conn,$sql);
 
         if($result){
-            echo json_encode("<br><br>Flashcard Adicionado!");
+            echo json_encode("<br>Flashcard Adicionado!");
             return;
         }else{
-            echo json_encode("<br><br>Ops, Aconteceu um erro, tente novamente! :(");
+            echo json_encode("<br>Ops...houve um erro, tente novamente! :(");
             return;
         }//Fim if else
 

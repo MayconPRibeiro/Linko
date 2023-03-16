@@ -18,14 +18,14 @@
 
 
     $conn = $conexao->conectar();
-    $sql = "insert into Deck (idDeck, nomeDeck, idAluno) values ('', '$nomeDeck', $idAluno)";
+    $sql = "insert into deck (idDeck, nomeDeck, idAluno) values ('', '$nomeDeck', $idAluno)";
     $result = mysqli_query($conn,$sql);
 
     if($result){
-        echo json_encode("<br><br>Deck Adicionado!");
+        echo json_encode("<br>Deck Adicionado!");
         return;
     }else{
-        echo json_encode("<br><br>Ops, Aconteceu um erro, tente novamente! :(");
+        echo json_encode("<br>Ops...houve um erro, tente novamente! :(");
         return;
     }//Fim if else
 
