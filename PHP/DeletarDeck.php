@@ -18,8 +18,10 @@
 
 
                 $conn = $conexao->conectar();
-                $sql = "delete from Deck where idDeck = '$idDeck'";
+                $sql = "delete from deck where idAluno = '$idDeck'";
                 $result = mysqli_query($conn,$sql);
+                $sql2 = "delete from flashcard where idDeck = '$idDeck'";
+                $result2 = mysqli_query($conn,$sql);
 
                 mysqli_close($conn);
 
