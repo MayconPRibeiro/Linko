@@ -9,9 +9,10 @@ class Conexao{
     
     public function conectar(){
         try{
-            $conn = mysqli_connect('localhost', 'root' , '' ,'site');
+            $conn = mysqli_connect('localhost', 'root' , '' ,'teste');
             if($conn){
                 
+                echo "entrei";
                 return $conn;
                 
             }//fim do if
