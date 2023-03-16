@@ -15,8 +15,7 @@
     //$objetoJson = '{"nome":"Joao","usuario":"doidao","senha":"123"}';
     //$obj = json_decode($objetoJson);
 
-    $usuario = $obj->usuario; 
-    $idDeck = $_COOKIE['idDeck'];
+    $idDeck = $obj->idDeck;
 
 
                 $conn = $conexao->Conectar();
