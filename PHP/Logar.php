@@ -26,7 +26,11 @@
                 echo json_encode("Ops...Não encontrei, tente novamente");
                 return;
             }else{
-                                
+
+                $idSql = "select idAluno from alunos where usuario = '$usuario' and senha = '$senha'";
+                $result = mysqli_query($conn, $idSql);  
+                setcookie('codAluno', $result);
+
                 header("location: Decks.js");
                 exit();
                 

@@ -16,10 +16,11 @@
     //$obj = json_decode($objetoJson);
 
     $usuario = $obj->usuario; 
+    $idDeck = $_COOKIE['idDeck'];
 
 
                 $conn = $conexao->Conectar();
-                $sql = "select * from flashcard where usuario = '$usuario'";
+                $sql = "select * from flashcard where idDeck = '$idDeck'";
                 $result = mysqli_query($conn, $sql);
 
                 while ($dados = mysqli_fetch_Array($result)){

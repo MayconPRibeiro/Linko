@@ -16,6 +16,7 @@
     //$obj = json_decode($objetoJson);
 
     $idDeck = $obj->idDeck; 
+    $idAluno = $_COOKIE['idAluno'];
 
 
                 $conn = $conexao->Conectar();
@@ -23,6 +24,7 @@
                 $result = mysqli_query($conn, $sql);
 
                 while ($dados = mysqli_fetch_Array($result)){
+
 
                     $idDeck = $dados['idDeck'];
                     $nomeDeck = $dados['nomeDeck'];
